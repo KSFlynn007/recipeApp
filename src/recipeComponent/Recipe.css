@@ -1,3 +1,89 @@
+/*  
+    pink: #FF7876
+    dark yellow: #FFBE00
+    dark pink: #FF423D;
+    yellow: #FFDA79
+    teal: #65C6BB
+*/
+.recipe-card{
+    margin: auto;
+    width: 500px;
+}
+
 img{
-    width: 50%;
+    border: 5px solid #FF423D;
+    border-radius: 10%;
+}
+
+.card{
+    background-color: rgb(255, 120, 118, 0.8);
+    border: 5px solid #FF423D;
+    border-radius: 5%;
+    padding: 1em;
+}
+
+.card > h1{
+    max-width: 80%;
+    margin: 10px auto;
+}
+
+.card > p:nth-of-type(1){
+    font-weight: bold;
+}
+
+.ingredient{
+    list-style: none;
+    text-align: left;
+}
+
+.tabIcon{
+    background: #65C6BB;
+    width: 20px;
+    height: 30px;
+    margin-left: 15%;
+}
+
+.tabIcon-circ{
+    width:20px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background: #65C6BB;
+    margin-left: 15%;
+    margin-top: -2%;
+}
+
+.link{
+    font-weight: bold;
+    font-size: 1.3em;
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover{
+    cursor: pointer;
+}
+
+@media all and (max-width:1100px){
+    .recipe-card {
+        margin: auto;
+        min-width: 50%;
+    }
+
+    img{
+        width: 70%;
+        height: 70%;
+    }
+}
+
+@media all and (max-width:866px) {
+
+}
+
+@media all and (max-width:585px) {
+    .tabIcon {
+        height: 25px;
+    }
+    .tabIcon-circ {
+        margin-top: -3%;
+    }
 }

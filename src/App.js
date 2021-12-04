@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Recipe from './recipeComponent/Recipe.js';
+import Recipe from './recipeComponent/Recipe.js'; 
+import logo from './recipe.png'
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('chicken')
+  const [query, setQuery] = useState('pie')
 
 
   const APP_ID = 'cd825116';
@@ -27,7 +28,6 @@ const App = () => {
 
   const updateSearch = e => {
     setSearch(e.target.value);
-    console.log(query);
   }
 
   const getSearch = e => {
@@ -37,10 +37,14 @@ const App = () => {
 
   return(
     <div className="App">
+      <h1 className="page-title">Welcome to the Recipe Book</h1>
+      <img className="logo" src={logo} alt="" />
+      <h4>The following recipes are provided by Edamam API, search any word to get new results.</h4>
       <form onSubmit={getSearch} className="search-form">
         <input 
           type="text" 
-          className="search-bar" 
+          className="search-bar"
+          placeholder={query.charAt(0).toUpperCase() + query.slice(1)} 
           value={search} 
           onChange={updateSearch}
         />
@@ -48,15 +52,19 @@ const App = () => {
           Search
         </button>
       </form>
-      {recipes.map(recipe => (
-        <Recipe 
-          key={Math.random()}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}>
+      <div className="grid-card">
+        {recipes.map(recipe => (
+          <Recipe 
+            key={Math.random()}
+            title={recipe.recipe.label}
+            image={recipe.recipe.image}
+            shareAs={recipe.recipe.shareAs}
+            ingredientLines={recipe.recipe.ingredientLines}
+            >
 
-        </Recipe>
-      ))}
+          </Recipe>
+        ))}
+      </div>
     </div>
   );
 }
