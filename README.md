@@ -1,3 +1,9 @@
+# Recipe App
+
+## Fetch API
+This application uses the free Recipe Search API from [Edamam](https://developer.edamam.com/edamam-recipe-api)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
