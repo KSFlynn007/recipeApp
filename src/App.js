@@ -39,7 +39,7 @@ const App = () => {
     <div className="App">
       <h1 className="page-title">Welcome to the Recipe Book</h1>
       <img className="logo" src={logo} alt="" />
-      <h4>The following recipes are provided by Edamam API, search any word to get new results.</h4>
+      <h4>Search any ingredient or recipe name to get new results, some delicious pie recipes have been loaded for you from Edamam API.</h4>
       <form onSubmit={getSearch} className="search-form">
         <input 
           type="text" 
